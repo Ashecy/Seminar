@@ -1,0 +1,68 @@
+\section{矩阵求导}
+本部分介绍矩阵求导法则, 
+下文中默认 $ \textbf{A} $, $ \textbf{M} $ 等为 $ m \times n $ 维矩阵, $\mathbf{a}$, $ \mathbf{v} $ 等为 n 维列向量, $ x, t $ 等为标量
+\subsection{标量求导}
+\begin{definition}
+    假设标量函数 $ f(\mathbf{x}) $, 其中 $ \mathbf{x} $ 为 n 维列向量, 则 
+\begin{equation}
+    \frac{\partial f}{\partial \mathbf{x}} = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \cdots, \frac{\partial f}{\partial x_n} \right)^{T}
+\end{equation}
+\end{definition}
+\begin{proposition}
+        如果 $f(\mathbf{x}) = \mathbf{a}^T \mathbf{x}$, 其中 $\mathbf{a}$ 是一个常向量, 则
+        \begin{equation}
+            \frac{\partial f}{\partial \mathbf{x}} = \mathbf{a}.
+        \end{equation}
+%        如果 $f(\mathbf{x}) = \mathbf{x}^T \mathbf{x}$, 则
+%        \begin{equation}
+%            \frac{\partial f}{\partial \mathbf{x}} = 2\mathbf{x}.
+%        \end{equation}
+\end{proposition}
+
+\begin{definition}
+    假设有一个标量函数 $ f(\mathbf{X}) $，其中 $\mathbf{X} $ 为 $ m \times n $ 是一个矩阵, 则
+\begin{equation}
+    \frac{\partial f}{\partial \mathbf{X}} = \left( \frac{\partial f}{\partial X_{ij}} \right)
+\end{equation}
+\end{definition}
+
+\subsection{向量求导}
+
+\begin{definition}
+    假设有向量函数 $ \mathbf{F}(x) = [f_{1}(x), f_{2}(x), \dots, f_{n}(x)]^{T} $, 其中 $ x $ 为标量, 则
+\begin{equation}
+    \mathbf{F}^{'}(x) = [f_{1}^{'}(x), f_{2}^{'}(x), \dots, f_{n}^{'}(x)]^{T}
+\end{equation}
+\end{definition}
+
+\begin{definition}
+    若向量函数 $ \mathbf{F}(\mathbf{x}) = [f_1(\mathbf{x}), f_2(\mathbf{x}), \dots, f_m(\mathbf{x})] $，其中 $ f_i(\mathbf{x}) $ 是标量函数，$ \mathbf{x} = [x_1, x_2, \dots, x_n] $，则向量 $ \mathbf{F}(\mathbf{x}) $ 对 $ \mathbf{x} $ 的导数是 Jacobi 矩阵：
+\begin{equation}
+    \frac{\partial \mathbf{F}(\mathbf{x})}{\partial \mathbf{x}} = \left(\frac{\partial f_{i}}{\partial x_{j}}\right)_{ij} = 
+    \begin{pmatrix}
+        \frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \cdots & \frac{\partial f_1}{\partial x_n} \\
+        \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \cdots & \frac{\partial f_2}{\partial x_n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \frac{\partial f_m}{\partial x_1} & \frac{\partial f_m}{\partial x_2} & \cdots & \frac{\partial f_m}{\partial x_n}
+    \end{pmatrix}
+\end{equation}
+\end{definition}
+
+\begin{proposition}
+    如果 $\mathbf{F}(\mathbf{x}) = \mathbf{A} \mathbf{x}$，其中 $\mathbf{A}$ 是 $m \times n$ 的常矩阵，则：
+    \begin{equation}
+        \frac{\partial \mathbf{F}}{\partial \mathbf{x}} = \mathbf{A}.
+    \end{equation} 
+\end{proposition}
+
+\subsection{矩阵求导}
+矩阵对标量求导为 $ \frac{\partial \mathbf A}{\partial x} $ = $ \left( \frac{\partial A_{ij}}{\partial x}\right) $. 
+
+\subsection{对于反向传播}
+如果设 $ \mathbf{L} = \mathbf{W} \mathbf{x} + \mathbf{b} $, 其中  $ \sigma $ 为激活函数, 则 
+\begin{equation}
+    \frac{\partial \sigma}{\partial \mathbf{x}} = \mathbf{W}^{T} \cdot \frac{\partial \mathbf{L}}{\partial \mathbf{x}},  
+    \quad
+    \frac{\partial \sigma}{\partial \mathbf{W}} = \frac{\partial \mathbf{L}}{\partial \mathbf{W}} \cdot \mathbf{x}^{T},  
+\end{equation}
+

@@ -1,0 +1,187 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global/global}
+  \entry{Adam}{misc}{}{}
+    \name{author}{2}{}{%
+      {{hash=KDP}{%
+         family={Kingma},
+         familyi={K\bibinitperiod},
+         given={Diederik\bibnamedelima P.},
+         giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Ba},
+         familyi={B\bibinitperiod},
+         given={Jimmy},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KDPBJ1}
+    \strng{fullhash}{KDPBJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{eprint}
+    \verb 1412.6980
+    \endverb
+    \field{title}{Adam: A Method for Stochastic Optimization}
+    \verb{url}
+    \verb https://arxiv.org/abs/1412.6980
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.LG}
+    \field{year}{2017}
+  \endentry
+
+  \entry{lu2017expressivepowerneuralnetworks}{misc}{}{}
+    \name{author}{5}{}{%
+      {{hash=LZ}{%
+         family={Lu},
+         familyi={L\bibinitperiod},
+         given={Zhou},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=PH}{%
+         family={Pu},
+         familyi={P\bibinitperiod},
+         given={Hongming},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=WF}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Feicheng},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=HZ}{%
+         family={Hu},
+         familyi={H\bibinitperiod},
+         given={Zhiqiang},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=WL}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Liwei},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LZ+1}
+    \strng{fullhash}{LZPHWFHZWL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{eprint}
+    \verb 1709.02540
+    \endverb
+    \field{title}{The Expressive Power of Neural Networks: A View from the
+  Width}
+    \verb{url}
+    \verb https://arxiv.org/abs/1709.02540
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.LG}
+    \field{year}{2017}
+  \endentry
+
+  \entry{PINN}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=RM}{%
+         family={Raissi},
+         familyi={R\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Perdikaris},
+         familyi={P\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=KG}{%
+         family={Karniadakis},
+         familyi={K\bibinitperiod},
+         given={G.E.},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \keyw{Data-driven scientific computing, Machine learning, Predictive
+  modeling, Runge–Kutta methods, Nonlinear dynamics}
+    \strng{namehash}{RMPPKG1}
+    \strng{fullhash}{RMPPKG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{abstract}{%
+    We introduce physics-informed neural networks – neural networks that are
+  trained to solve supervised learning tasks while respecting any given laws of
+  physics described by general nonlinear partial differential equations. In
+  this work, we present our developments in the context of solving two main
+  classes of problems: data-driven solution and data-driven discovery of
+  partial differential equations. Depending on the nature and arrangement of
+  the available data, we devise two distinct types of algorithms, namely
+  continuous time and discrete time models. The first type of models forms a
+  new family of data-efficient spatio-temporal function approximators, while
+  the latter type allows the use of arbitrarily accurate implicit Runge–Kutta
+  time stepping schemes with unlimited number of stages. The effectiveness of
+  the proposed framework is demonstrated through a collection of classical
+  problems in fluids, quantum mechanics, reaction–diffusion systems, and the
+  propagation of nonlinear shallow-water waves.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.jcp.2018.10.045
+    \endverb
+    \field{issn}{0021-9991}
+    \field{pages}{686\bibrangedash 707}
+    \field{title}{Physics-informed neural networks: A deep learning framework
+  for solving forward and inverse problems involving nonlinear partial
+  differential equations}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0021999118307125
+    \endverb
+    \field{volume}{378}
+    \field{journaltitle}{Journal of Computational Physics}
+    \field{year}{2019}
+  \endentry
+
+  \entry{pu-thesis}{thesis}{}{}
+    \name{author}{1}{}{%
+      {{hash=�}{%
+         family={蒲俊才},
+         familyi={�\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{�1}
+    \strng{fullhash}{�1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{�}
+    \field{sortinithash}{�}
+    \field{title}{可积深度学习与局域波}
+    \list{institution}{1}{%
+      {华东师范大学}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{2023}
+  \endentry
+\enddatalist
+\endinput

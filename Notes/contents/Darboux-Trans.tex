@@ -1,0 +1,59 @@
+\chapter{1+2 维可积系统}
+\section{KP 方程及其 Darboux 变换}
+\begin{definition}
+    KP 方程: 
+    \begin{equation}\label{def:KP}
+        u_{xt} = (u_{xxx} + 6uu_{x})_{x} + 3 \alpha^{2}u_{yy}
+    \end{equation} 
+    其中 $ \alpha = \pm 1 $, 为 KP \Romannum{1} 方程, $ \alpha = \pm \i $, 为 KP \Romannum{2} 方程
+\end{definition}
+这里为令 $ v_{x} = u $, 将 (\ref{def:KP}) 对 x 积分一次, 并去 $ c = 0 $, 得到另一种形式 
+\begin{equation}
+    v_{xt} = v_{xxx} + 6v_{x}v_{xx} + 3 \alpha v_{yy} 
+\end{equation}
+KP 方程的 LaX 对为
+\begin{equation}\label{kp-lax}
+    \begin{cases}
+        \phi_{y} = \alpha^{-1} \phi_{xx} + \alpha^{-1}u\phi \\
+        \phi_{t} = 4 \phi_{xx} + 6u \phi_{x} + 3 (\alpha v_{y} + u_{x}) \phi
+    \end{cases}
+\end{equation}
+则 (\ref{def:KP}) 是 (\ref{kp-lax}) 的可积条件, 即 Lax 对相容性($\phi_{yt} = \phi_{ty} $)可推出方程. 
+不妨设 
+\begin{equation*}
+    \begin{cases}
+        \phi_{x} = U \phi \\
+        \phi_{t} = V \phi
+    \end{cases} \implies V_{t} - V_{x} + [U,V] = 0 
+    \implies U = \begin{pmatrix} 0 & B\\ C & 0 \end{pmatrix}
+\end{equation*}
+利用 (\ref{kp-lax}) 带入, 则只剩下 $ \phi $ 和 $ \phi_{x} $. 
+\begin{definition}
+    KP 方程的 Darboux 变换 
+    \begin{equation*}
+        \begin{cases}
+            \phi' = \phi_{x} - \frac{h_{x}}{h} \phi \\
+            u' = u + 2 (\frac{h_{x}}{h})_x
+        \end{cases}
+    \end{equation*}
+    其中 h 为 Lax 的一个解
+\end{definition}
+则 
+\begin{equation*}
+    (U,\phi) \to (U',\phi') \to \dots
+    \begin{cases}
+        \phi'_{y} = \text{第一次, 未完待续}
+    \end{cases}
+\end{equation*}
+
+
+
+
+% 第二次
+\begin{example}
+    对 $ \alpha = 1, u_{xt} = (u_{xxx} + 6uu_{x})_{x} + 3u_{yy} $, 可取 
+    \begin{equation}
+        h = e^{\lambda x + \lambda^{2}y + 4 \lambda^{3}t} + 1
+    \end{equation} 
+    其中 
+\end{example}

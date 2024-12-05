@@ -1,0 +1,20 @@
+\section{Python 知识}
+\subsection{Numpy 和 Tensor}
+\documentclass{article}
+\usepackage{geometry}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|}
+\toprule
+特性 & NumPy & Tensor \\
+\midrule
+类型 & ndarray & tensor \\
+计算设备 & 主要在 CPU 上运算 & 支持在 CPU 或 GPU 上运算 \\
+自动求导 & 不支持自动求导 & 支持自动求导（在深度学习框架中） \\
+操作支持 & 提供大量数值计算功能（线性代数、傅里叶变换等） & 提供的操作与 NumPy 类似，但更加适合大规模的机器学习任务 \\
+内存管理 & NumPy 数组是在内存中直接存储的 & Tensor 可以通过框架管理更高效的内存（如在 GPU 上） \\
+\bottomrule
+\end{tabular}
+\caption{NumPy 和 Tensor 的异同}
+\end{table}

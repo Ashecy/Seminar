@@ -1,0 +1,56 @@
+D:\Program\Python\python.exe "D:\Math\PINNs\main\discrete_time_inference (AC)\mod-torch-AC.py" 
+Starting training with Adam optimizer...
+Epoch(Adam): 0, Loss: 6.02044e+03, Time: 0.02
+Epoch(Adam): 1000, Loss: 5.61451e+01, Time: 25.82
+Epoch(Adam): 2000, Loss: 2.14651e+01, Time: 25.75
+Epoch(Adam): 3000, Loss: 3.13375e+01, Time: 25.52
+Epoch(Adam): 4000, Loss: 6.83217e+00, Time: 27.13
+Epoch(Adam): 5000, Loss: 9.88273e+00, Time: 52.90
+Epoch(Adam): 6000, Loss: 4.71676e+00, Time: 35.73
+Epoch(Adam): 7000, Loss: 5.28025e+01, Time: 34.01
+Epoch(Adam): 8000, Loss: 2.41930e+01, Time: 33.93
+Epoch(Adam): 9000, Loss: 2.30658e+01, Time: 33.98
+Epoch(Adam): 10000, Loss: 6.79734e+00, Time: 34.34
+Epoch(Adam): 11000, Loss: 6.85451e+00, Time: 33.81
+Epoch(Adam): 12000, Loss: 1.04338e+01, Time: 35.03
+Epoch(Adam): 13000, Loss: 1.94334e+01, Time: 37.97
+Epoch(Adam): 14000, Loss: 3.34544e+00, Time: 34.23
+Epoch(Adam): 15000, Loss: 8.25677e+00, Time: 33.73
+Epoch(Adam): 16000, Loss: 1.02723e+01, Time: 33.83
+Epoch(Adam): 17000, Loss: 2.96133e+01, Time: 33.60
+Epoch(Adam): 18000, Loss: 3.64502e+00, Time: 34.08
+Epoch(Adam): 19000, Loss: 3.92417e+00, Time: 34.34
+Epoch(Adam): 20000, Loss: 7.07890e+02, Time: 33.98
+Epoch(Adam): 21000, Loss: 3.70859e+01, Time: 34.07
+Epoch(Adam): 22000, Loss: 1.01086e+01, Time: 33.75
+Epoch(Adam): 23000, Loss: 4.73629e+01, Time: 33.22
+Epoch(Adam): 24000, Loss: 2.28340e+01, Time: 33.47
+Epoch(Adam): 25000, Loss: 1.62835e+02, Time: 33.44
+Epoch(Adam): 26000, Loss: 3.48991e+01, Time: 32.86
+Epoch(Adam): 27000, Loss: 1.46976e+01, Time: 35.71
+Epoch(Adam): 28000, Loss: 4.58119e+01, Time: 35.47
+Epoch(Adam): 29000, Loss: 3.63998e+01, Time: 36.83
+Epoch(Adam): 30000, Loss: 1.43657e+01, Time: 40.17
+Epoch(Adam): 31000, Loss: 7.43146e+00, Time: 32.27
+Epoch(Adam): 32000, Loss: 2.82189e+00, Time: 35.13
+Epoch(Adam): 33000, Loss: 2.60323e+00, Time: 58.27
+Epoch(Adam): 34000, Loss: 1.19480e+00, Time: 44.69
+Epoch(Adam): 35000, Loss: 1.70803e+01, Time: 36.73
+Epoch(Adam): 36000, Loss: 1.40400e+01, Time: 29.52
+Epoch(Adam): 37000, Loss: 2.17823e+00, Time: 39.44
+Epoch(Adam): 38000, Loss: 2.17251e+01, Time: 39.20
+Epoch(Adam): 39000, Loss: 6.75084e+00, Time: 39.73
+Epoch(Adam): 40000, Loss: 2.34982e+00, Time: 39.00
+Epoch(Adam): 41000, Loss: 8.20120e+00, Time: 39.86
+Epoch(Adam): 42000, Loss: 8.75697e+00, Time: 39.14
+Epoch(Adam): 43000, Loss: 3.44887e+01, Time: 39.83
+Epoch(Adam): 44000, Loss: 6.56185e+00, Time: 40.39
+Epoch(Adam): 45000, Loss: 3.89281e+00, Time: 39.06
+Epoch(Adam): 46000, Loss: 5.14066e+00, Time: 39.09
+Epoch(Adam): 47000, Loss: 7.32092e+00, Time: 44.57
+Epoch(Adam): 48000, Loss: 8.12386e-01, Time: 39.68
+Epoch(Adam): 49000, Loss: 8.83819e+00, Time: 39.10
+Switching to L-BFGS optimizer...
+Error: 3.14226e-01
+
+Process finished with exit code 0

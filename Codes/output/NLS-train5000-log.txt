@@ -1,0 +1,107 @@
+D:\Program\Python\python.exe "D:\Math\PINNs\main\continuous_time_inference (Schrodinger)\mod-troch-Shcrodinger.py" 
+Epoch 0, Loss: 2.37472e+00
+Epoch time: 1.11s, CPU memory: 932.29 MB, GPU memory: 0.00 MB
+Epoch 100, Loss: 3.08235e-01
+Epoch time: 0.75s, CPU memory: 932.75 MB, GPU memory: 0.00 MB
+Epoch 200, Loss: 2.06955e-01
+Epoch time: 0.68s, CPU memory: 932.80 MB, GPU memory: 0.00 MB
+Epoch 300, Loss: 1.88870e-01
+Epoch time: 0.84s, CPU memory: 932.80 MB, GPU memory: 0.00 MB
+Epoch 400, Loss: 1.83794e-01
+Epoch time: 1.29s, CPU memory: 932.84 MB, GPU memory: 0.00 MB
+Epoch 500, Loss: 1.80783e-01
+Epoch time: 0.80s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 600, Loss: 1.78689e-01
+Epoch time: 1.00s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 700, Loss: 1.77157e-01
+Epoch time: 0.89s, CPU memory: 932.84 MB, GPU memory: 0.00 MB
+Epoch 800, Loss: 1.75908e-01
+Epoch time: 0.82s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 900, Loss: 1.74830e-01
+Epoch time: 0.69s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 1000, Loss: 1.73833e-01
+Epoch time: 0.70s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 1100, Loss: 1.73538e-01
+Epoch time: 0.70s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 1200, Loss: 1.71937e-01
+Epoch time: 0.67s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 1300, Loss: 1.71137e-01
+Epoch time: 0.63s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 1400, Loss: 1.70365e-01
+Epoch time: 0.69s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 1500, Loss: 1.69710e-01
+Epoch time: 0.76s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 1600, Loss: 1.70709e-01
+Epoch time: 0.69s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 1700, Loss: 1.68485e-01
+Epoch time: 0.69s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 1800, Loss: 1.67936e-01
+Epoch time: 0.79s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 1900, Loss: 1.67547e-01
+Epoch time: 0.64s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 2000, Loss: 1.66816e-01
+Epoch time: 0.76s, CPU memory: 932.82 MB, GPU memory: 0.00 MB
+Epoch 2100, Loss: 1.66229e-01
+Epoch time: 0.65s, CPU memory: 932.81 MB, GPU memory: 0.00 MB
+Epoch 2200, Loss: 1.65592e-01
+Epoch time: 0.67s, CPU memory: 932.81 MB, GPU memory: 0.00 MB
+Epoch 2300, Loss: 1.65121e-01
+Epoch time: 0.70s, CPU memory: 932.81 MB, GPU memory: 0.00 MB
+Epoch 2400, Loss: 1.65774e-01
+Epoch time: 0.90s, CPU memory: 932.81 MB, GPU memory: 0.00 MB
+Epoch 2500, Loss: 1.67822e-01
+Epoch time: 0.66s, CPU memory: 764.29 MB, GPU memory: 0.00 MB
+Epoch 2600, Loss: 1.64281e-01
+Epoch time: 0.67s, CPU memory: 764.29 MB, GPU memory: 0.00 MB
+Epoch 2700, Loss: 1.68327e-01
+Epoch time: 0.89s, CPU memory: 764.29 MB, GPU memory: 0.00 MB
+Epoch 2800, Loss: 1.63384e-01
+Epoch time: 0.69s, CPU memory: 764.29 MB, GPU memory: 0.00 MB
+Epoch 2900, Loss: 1.62510e-01
+Epoch time: 0.70s, CPU memory: 727.31 MB, GPU memory: 0.00 MB
+Epoch 3000, Loss: 1.63111e-01
+Epoch time: 0.87s, CPU memory: 727.31 MB, GPU memory: 0.00 MB
+Epoch 3100, Loss: 1.61898e-01
+Epoch time: 0.74s, CPU memory: 727.31 MB, GPU memory: 0.00 MB
+Epoch 3200, Loss: 1.61566e-01
+Epoch time: 0.65s, CPU memory: 727.31 MB, GPU memory: 0.00 MB
+Epoch 3300, Loss: 1.61291e-01
+Epoch time: 0.82s, CPU memory: 707.31 MB, GPU memory: 0.00 MB
+Epoch 3400, Loss: 1.61078e-01
+Epoch time: 0.82s, CPU memory: 707.31 MB, GPU memory: 0.00 MB
+Epoch 3500, Loss: 1.62884e-01
+Epoch time: 0.81s, CPU memory: 707.24 MB, GPU memory: 0.00 MB
+Epoch 3600, Loss: 1.61660e-01
+Epoch time: 0.87s, CPU memory: 707.25 MB, GPU memory: 0.00 MB
+Epoch 3700, Loss: 1.60252e-01
+Epoch time: 0.85s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 3800, Loss: 1.60217e-01
+Epoch time: 0.81s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 3900, Loss: 1.63772e-01
+Epoch time: 0.84s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 4000, Loss: 1.59415e-01
+Epoch time: 0.83s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 4100, Loss: 1.59142e-01
+Epoch time: 0.84s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 4200, Loss: 1.58976e-01
+Epoch time: 0.94s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 4300, Loss: 1.60186e-01
+Epoch time: 0.80s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 4400, Loss: 1.58354e-01
+Epoch time: 0.81s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 4500, Loss: 1.59035e-01
+Epoch time: 0.85s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 4600, Loss: 1.59213e-01
+Epoch time: 0.71s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 4700, Loss: 1.57526e-01
+Epoch time: 0.87s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 4800, Loss: 1.57511e-01
+Epoch time: 1.07s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+Epoch 4900, Loss: 1.57159e-01
+Epoch time: 0.63s, CPU memory: 706.38 MB, GPU memory: 0.00 MB
+
+Total Training time: 3913.21 seconds
+Peak GPU memory usage: 0.00 MB
+Error u: 8.05620e-01
+Error v: 1.09750e+00
+Error h: 4.54080e-01

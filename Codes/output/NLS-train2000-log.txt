@@ -1,0 +1,50 @@
+D:\Program\Python\python.exe "D:\Math\PINNs\main\continuous_time_inference (Schrodinger)\troch-Shcrodinger.py" 
+Epoch 0, Loss: 8.63368e-01
+Epoch time: 1.29s, CPU memory: 932.53 MB, GPU memory: 0.00 MB
+Epoch 100, Loss: 1.89001e-01
+Epoch time: 0.75s, CPU memory: 932.96 MB, GPU memory: 0.00 MB
+Epoch 200, Loss: 1.79053e-01
+Epoch time: 0.74s, CPU memory: 933.02 MB, GPU memory: 0.00 MB
+Epoch 300, Loss: 1.74613e-01
+Epoch time: 0.86s, CPU memory: 933.02 MB, GPU memory: 0.00 MB
+Epoch 400, Loss: 1.72488e-01
+Epoch time: 0.76s, CPU memory: 933.02 MB, GPU memory: 0.00 MB
+Epoch 500, Loss: 1.71166e-01
+Epoch time: 0.64s, CPU memory: 933.05 MB, GPU memory: 0.00 MB
+Epoch 600, Loss: 1.69622e-01
+Epoch time: 0.61s, CPU memory: 933.04 MB, GPU memory: 0.00 MB
+Epoch 700, Loss: 1.68554e-01
+Epoch time: 0.67s, CPU memory: 933.04 MB, GPU memory: 0.00 MB
+Epoch 800, Loss: 1.67411e-01
+Epoch time: 0.68s, CPU memory: 933.03 MB, GPU memory: 0.00 MB
+Epoch 900, Loss: 1.66222e-01
+Epoch time: 0.80s, CPU memory: 933.05 MB, GPU memory: 0.00 MB
+Epoch 1000, Loss: 1.64997e-01
+Epoch time: 0.66s, CPU memory: 933.03 MB, GPU memory: 0.00 MB
+Epoch 1100, Loss: 1.65004e-01
+Epoch time: 0.72s, CPU memory: 933.03 MB, GPU memory: 0.00 MB
+Epoch 1200, Loss: 1.63150e-01
+Epoch time: 0.73s, CPU memory: 933.03 MB, GPU memory: 0.00 MB
+Epoch 1300, Loss: 1.62530e-01
+Epoch time: 0.79s, CPU memory: 933.03 MB, GPU memory: 0.00 MB
+Epoch 1400, Loss: 1.62064e-01
+Epoch time: 0.70s, CPU memory: 933.03 MB, GPU memory: 0.00 MB
+Epoch 1500, Loss: 1.61503e-01
+Epoch time: 0.70s, CPU memory: 933.03 MB, GPU memory: 0.00 MB
+Epoch 1600, Loss: 1.60461e-01
+Epoch time: 0.91s, CPU memory: 933.03 MB, GPU memory: 0.00 MB
+Epoch 1700, Loss: 1.59985e-01
+Epoch time: 0.82s, CPU memory: 933.03 MB, GPU memory: 0.00 MB
+Epoch 1800, Loss: 1.59506e-01
+Epoch time: 0.64s, CPU memory: 933.03 MB, GPU memory: 0.00 MB
+Epoch 1900, Loss: 1.59168e-01
+Epoch time: 0.62s, CPU memory: 933.03 MB, GPU memory: 0.00 MB
+
+Total Training time: 1498.59 seconds
+Peak GPU memory usage: 0.00 MB
+Error u: 8.04676e-01
+Error v: 1.09643e+00
+Error h: 4.52924e-01
+
+
+Process finished with exit code 0

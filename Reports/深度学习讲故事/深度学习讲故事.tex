@@ -1,0 +1,32 @@
+\documentclass[lang=cn,a4paper,newtx,bibtex]{elegantpaper}
+
+\title{深度学习讲故事}
+\author{\href{https://github.com/IceySwan/JW-seminar}{https://github.com/IceySwan/JW-seminar}}
+\date{\zhtoday}
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+\addbibresource[location=local]{references.bib} % 参考文献，不要删除
+\newcommand{\sech}{\text{sech}}
+\renewcommand{\i}{\mathrm{i}}
+\usepackage{tikz}
+\usetikzlibrary{fit}
+\tikzset{
+    Arrow/.style={arrows={latex-},draw=black,line width=1pt,rounded corners=4pt},
+    Node/.style={draw=black, circle, inner sep=2pt, minimum size=1.5em, align=center, line width=1.0pt},
+    Tittle/.style={text width=4em, text centered},
+    groupcircle/.style={draw=black, thick, solid, circle}
+}
+
+\begin{document}
+
+\maketitle
+
+\input{contents/Ch1-DL-introduction}
+\input{contents/Ch2-PINN}
+
+%\appendix
+%\input{contents/Matrix Differential.tex}
+
+\printbibliography[heading=bibintoc, title=\ebibname]
+\end{document}

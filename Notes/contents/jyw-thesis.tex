@@ -1,0 +1,666 @@
+\chapter{反时间非局部 NLS 方程-jyw}
+
+\section{2024.09.21}
+
+\subsection{原谱问题的解}
+设 Lax 对为：
+\begin{equation}
+    \begin{aligned}
+        \Phi_{x} &= U \Phi = (i \lambda \sigma_{3} + P) \Phi \\
+        \Phi_{t} &= V \Phi = -(2i\lambda^{2} \sigma_{3} + 2 \lambda P + i (P^{2} + p_{x})\sigma_{3}) \Phi
+    \end{aligned}
+\end{equation}
+其中
+\begin{equation}
+    \begin{aligned}
+        &
+        P = \begin{pmatrix}
+            0 & p & p(-t) \\ -r_{1} & 0 & 0 \\ -r_{2} & 0 & 0
+        \end{pmatrix}, 
+        \sigma_{3} = \begin{pmatrix}
+            1 &  & \\ & -1 & \\ & & -1 
+        \end{pmatrix}, \\
+    & \begin{cases}
+        r_{1} = ap^{*} + b p(-t),\\
+        r_{2} = ap(-t) + b^{*}p^{*}, \quad a \in \mathbb{R}, b \in \mathbb{C}
+    \end{cases}
+\end{aligned}
+\end{equation}
+将相容性条件 $ U_{t} - V_{x} - [U,V] = 0 $ 代入上式可得
+\begin{equation}
+    \begin{aligned}
+        &P_{t} + 2\lambda P{x} + iPP_{x}\sigma_{3} + iP_{x} P\sigma_{3} + iP_{xx}\sigma_{3} \\
+        &-[-2 \lambda^{3}I + 2i \lambda^{2} \sigma_{3} P - \lambda \sigma_{3} (P^{2} + P_{x}) \sigma_{3} + 2i \lambda^{2} P \sigma_{3} + 2 \lambda P^{2} + i (P^{3} + iPP_{x})\sigma_{3} ] \\
+        &-2 \lambda^3 + 2i \lambda^2 P \sigma_{3} - \lambda (p^{2} + P_{x}) + 2i \lambda^{2} \sigma_{3} P + 2 \lambda P^{2} + i (P^{2} + P_{xx}) = 0.
+    \end{aligned}
+\end{equation}
+故可化简为
+\begin{equation}\label{nls-equation}
+    P_{t} + iP_{xx} \sigma_{3} - 2i P^{3}\sigma_{3} = 0, \implies iP_{t} - P_{xx} + 2 P^{3}\sigma_{3} = 0.
+\end{equation}
+则上式可写为
+\begin{equation}
+    \begin{aligned}
+    \begin{pmatrix}
+        0 & ip_{t} & ip_{t}^{*}(-t) \\ -iap^{*}_{t} - ibp_{t}(-t) & 0 & 0 \\ -iap_{t}(-t) - ib^{*}p^{*}_{t} & 0 & 0
+    \end{pmatrix}
+    - 
+    \begin{pmatrix}
+        0 & -p_{xx} & -p_{xx}^{*}(-t) \\ -ap^{*}_{xx} - bp_{xx}(-t) & 0 & 0 \\ -ap_{xx}(-t) - b^{*}p^{*}_{xx} & 0 & 0
+    \end{pmatrix} \\
+    +
+    \begin{pmatrix}
+        0 & 2p\Delta & 2p^{*}(-t)\Delta \\ 2r_{1} \Delta & 0 & 0 \\ 2r_{2} \Delta & 0 & 0
+    \end{pmatrix}
+    = 0
+\end{aligned}
+\end{equation}
+其中 $ \Delta = pr_{1} + p^{*}(-t) r_2 $, 则有
+\begin{equation}
+    \begin{aligned}
+        (12): \ &  ip_t - p_{xx} + 2p \Delta = 0 \\
+        (13): \ &  ip_{t}(-t) + p_{xx}(-t) + 2p^{*}(-t) \Delta = 0 \\
+        (21): \ &  -iap_{t}^{*} - ibp_{t}(-t) + ap_{xx}^{*} + bp_{xx}(-t) + 2r_{1} \Delta = 0 \\
+        (31): \ & -ap_{t}(-t) - ib^{*}p_{t}^{*} + ap_{xx}(-t) + b^{*}p_{xx}^{*} + 2r_{2} \Delta  = 0\\
+    \end{aligned}
+\end{equation}
+显然有 $ (12)^{*}(-t) = (13), a(12)^{*} + b(13)^{*} = (21), b(12)^{*} + a(13)^{*} = (31) $.
+
+\subsection{伴随问题的解}
+若 $ \Phi_! $ 是 $ \lambda = \lambda_{1} $ 时原谱问题的解,$ \exists A $ 使得 $ \Phi_{1}^{\dagger}A $ 是 $ \lambda = \lambda_1 $ 时伴随问题的解\footnote{这里 $ \dagger $ 表示 Hermitian 转置}, 即
+\begin{equation}
+    \text{原问题: } \begin{cases}
+        \Phi_{x} = U \Phi \\
+        \Phi_{t} = V \Phi
+    \end{cases}, \quad
+    \text{伴随问题: } \begin{cases}
+        \Psi_{x} = - \Psi U \\
+        \Psi_{t} = - \Phi V
+    \end{cases}
+\end{equation}
+我们想要得到
+\begin{equation}\label{NLS-dajudate-ideal}
+    (\Phi_{1}^{\dagger} A)_{x} = - \Phi_{1}^{\dagger} AU(\lambda_{1}^{*}) = - \Phi_{1}^{\dagger} A(i \lambda_{1}^{*} \sigma_{3} + P)
+\end{equation}
+对 $ \Phi_{1}^{\dagger} A $ 求偏导可得
+\begin{equation}\label{NLS-dajudate-ideal-diff}
+    (\Phi_{1}^{\dagger} A)_{x} = \Phi_{1}^{\dagger} U^{\dagger} \lambda_{1} A = \Phi_{1}^{\dagger}(-i \lambda_{1}^{*} \sigma_{3} + P^{T}) A
+\end{equation}
+由 (\ref{NLS-dajudate-ideal}) 和 (\ref{NLS-dajudate-ideal-diff}) 式可得 $ -AP = P^{T} A, A = (a_{ij})_{3 \times 3} $ 展开可得
+\begin{multline}
+    - \begin{pmatrix}
+        -(aa_{12} - b^{*}a_13)p^{*} + (-ba_{12} - aa_{13})p(-t) & a_{11}p & a_{11}p^{*}(-t) \\
+        -(aa_{22} - b^{*}a_{23})p^{*} + (- ba_{22} - aa_{23})p(-t) & a_{21}p & a_{21}p^{*}(-t) \\
+        (-aa_{32} - b^{*}a_{23})p^{*} + (-ba_{32} - a_{33})p(-t) & a_{31}p & a_{31}p^{*}(-t) \\
+    \end{pmatrix} \\
+    = \begin{pmatrix}
+        (-aa_{21} - ba_{31})p + (-b^{*}a_{21} - aa_{31})p^{*}(-t) & a_{11}p^{*} & a_{11}p(-t) \\
+        (-aa_{22} - ba_{32})p + (-b^{*}a_{22} - aa_{32})p^{*}(-t) & a_{12}p^{*} & a_{21}p(-t) \\
+        (-aa_{23} - ba_{33})p + (-b^{*}a_{23} - aa_{33})p^{*}(-t) & a_{13}p^{*} & a_{13}p(-t)
+    \end{pmatrix}^{T}
+\end{multline}
+故有 
+\begin{equation}
+    \begin{aligned}
+        a_{12} = a_{21} = a_{13} = a_{31} = 0 \\
+        aa_{23} + ba_{33} = 0 \\
+        b^{*}a_{22} + aa_{32} = 0 \\
+        ba_{22} + aa_{23} = 0 \\
+        aa_{32} + ba_{33} = 0
+    \end{aligned}
+    \implies
+    \begin{cases}
+        a_{33} = a \\
+        a_{32} = -b^{*} \\
+        a_{23} = -b\\
+        a_{33} = a
+    \end{cases}
+\end{equation}
+故有 $ (\Phi_{1}^{\dagger} A)_{t} = V^{T}(\lambda_{1})A $, 
+\begin{equation}
+    \begin{aligned}
+        \text{左侧} &= \Phi_{1}^{\dagger}A\big(2i \lambda_{1}^{*} \sigma_{3} + 2 \lambda_{1}^{*}P + i(P^{2} + P_{x})\sigma_{3}\big) = - \Phi_{1}^{*}AV(\lambda_{1}^{*})\\
+        \text{右侧} &= \Phi_{1}^{\dagger}\big(2i \lambda_{1}^{*}\sigma_{3} - 2 \lambda_{1}^{*}P^{\dagger} + i\sigma_{3} (P^{\dagger2} + P_{x}^{t})\big) A
+    \end{aligned}
+\end{equation}
+故有 $ V^{\dagger}(\lambda_{1})A = -AV(\lambda_{1}) $.
+
+\section{可积条件}%\section{2024.09.08}
+% 凡是 \framebox 包括的, 都可能有错误, 需要需改
+\framebox[\width]{接下来考虑 (\ref{nls-equation}) 的一般情形.} 设
+\begin{equation*}
+    P = \begin{pmatrix}
+        0 & p & q \\ -r_{1} & 0 & 0 \\ -r_{2} & 0 & 0
+    \end{pmatrix}, \quad
+    \sigma_{3} = \begin{pmatrix}
+        1 &  & \\ & -1 & \\ & & -1 
+    \end{pmatrix}
+\end{equation*} 
+则得到
+\begin{equation}\label{2024.09.28(*)}
+    \begin{aligned}
+        (12): \ & ip_{t} + p_{xx} + 2p \Delta = 0 \\
+        (13): \ & iq_{t} + q_{xx} + 2q \Delta = 0 \\
+        (21): \ & ir_{1t} + r_{1xx} + 2r_{1} \Delta = 0 \\
+        (31): \ & ir_{2t} + r_{2xx} + 2r_{2} \Delta = 0
+    \end{aligned}
+\end{equation}
+其中 $ \Delta = pr_{1} + qr_{2} $, 设
+\begin{equation}
+    \begin{cases}
+        r_{1} = ap_{1} + bq_{1},\\ 
+        r_{2} = cp_{1}+dq_{1}
+    \end{cases}
+\end{equation}
+参数 $ p_1 $ 可取 $ p, p^{*}, p(-x), p^{*}(-x),p(-t), p^{*}(-t) $, $ q_1 $ 同理.
+在 (12) 到 (21) 的约化中 $ ip_{t} \to ir_{1t} $, 考虑到约化符号于是 p 只能取 $ p^{*}, p^{*}(-x), p^{*}(-t) $, q 同理. 
+
+\subsection{若 $ p_{1} = p^{*}, q_{1} = q^{*}$}
+则
+\begin{equation}
+    \begin{cases}\label{2024.09.28r}
+        r_1 = ap^{*} + bq^{*} \\
+        r_2 = cp^{*} + dq^{*}
+    \end{cases}
+\end{equation}
+(\ref{2024.09.28(*)}) 式变为 
+\begin{equation}
+    \begin{aligned}
+        (12): \ & ip_{t} + p_{xx} + 2p \Delta = 0 \\
+        (13): \ & iq_{t} + q_{xx} + 2q \Delta = 0 \\
+        (21): \ & -iap^{*} - ibq^{*} + ap^{*}_{xx} + bq^{*}_{xx} + 2ap^{*}\Delta + 2bq^{*}\Delta = 0 \\
+        (31): \ & -icp^{*}_{t} - ibq^{*}_{t} + cp^{*}_{xx} + bq^{*}_{xx} + 2ap^{*}\Delta + 2bq^{*}\Delta = 0
+    \end{aligned}
+\end{equation}
+要约化(12)(13), 需要 $ \Delta^{*} = \Delta $, 其中 
+\begin{equation}
+    \begin{aligned}
+        \Delta &= app^{*} + bpq^{*} + cp^{*}q + dqq^{*} \\
+        \Delta^{*} &= a^{*}p^{*}p + b^{*}p^{*}q + c^{*}pq^{*} + d^{*}q^{*}q
+    \end{aligned}
+\end{equation} 
+则可得 $ a, d \in \mathbb{R}, b = c^{*} $, 此时有
+\begin{equation*}
+    \begin{aligned}
+        (21) &= a(12)^{*} + b(13)^{*} \\
+        (31) &= b^{*}(12)^{*} + d(13)^{*}
+    \end{aligned}
+\end{equation*}
+方程约化为
+\begin{equation*}
+    \begin{aligned}
+        ip_{t} + p_{xx} + 2p(app^{*} + bpq^{*} + b^{*}p^{*}q + dqq^{*}) = 0\\
+        iq_{t} + q_{xx} + 2q(app^{*} + bpq^{*} + b^{*}p^{*}q + dqq^{*}) = 0
+    \end{aligned}
+\end{equation*}
+则 q 可取 $ p, p^{*}, p(-x), p^{*}(-x), p(-t), p^{*}(-t). p(-x,-t), p^{*}(-x,-t) $, 由 $(12) \to (13)$ 的限制, 故只考虑 $ p(-x), p^{*}(-t), p^{*}(-x,-t) $
+
+\subsubsection{$ q=p^{*}(-t) $}
+此时 (\ref{2024.09.28r}) 化为
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap^{*} + bp(-t) \\
+        r_2 = b^{*}p^{*} + dp(-t)
+    \end{cases}
+\end{equation*}
+要 (12), (13) 等价, 需 $ \Delta^{*}(-t) = \Delta $, 则
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app^{*} + bpp(-t) + b^{*}p^{*}p^{*}(-t) + dp(-t)p^{*}(-t) \\
+        \Delta^{*}(-t) &= ap^{*}(-t)p(-t) + b^{*}p^{*}(-t)p^{*} + bp(-t)p + dp^{*}p 
+    \end{aligned}
+\end{equation*}
+为满足 $ \Delta^{*}(-t) = \Delta $, 需 $ a = d \in \mathbb{R} $, 此时 $ (13) = (12)^{*}(-t) $. 方程约化为
+\begin{equation*}
+    ip_{t} + p_{xx} + 2p\big(app^{*} + bpp^{*}(-t) + b^{*}pp^{*}(-t) + ap(-t)p^{*}(-t)\big) = 0
+\end{equation*}
+
+\subsubsection{$ q = p(-x)$}
+此时 (\ref{2024.09.28r}) 化为
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap^{*} + bp(-x) \\
+        r_2 = b^{*}p^{*} + dp(-x)
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app^{*} + bpp(-x) + b^{*}p^{*}p^{*}(-x) + dp(-x)p^{*}(-x) \\
+        \Delta^{*}(-x) &= ap^{*}(-x)p(-x) + b^{*}p^{*}(-x)p^{*} + bp(-x)p + dp^{*}p 
+    \end{aligned}
+\end{equation*}
+欲使 (12)(13) 等价, 需 $ \Delta(-x) = \Delta $, 需 $ a = d, b \in \mathbb{R} $. 此时有 (13) = (12)(-x), 方程约化为
+\begin{equation*}
+    ip_{t} + p_{xx} + 2p\big(app^{*} + bpp^{*}(-x) + b^{*}pp^{*}(-x) + ap(-x)p^{*}(-x)\big) = 0
+\end{equation*}
+
+\subsubsection{$ q = p^{*}(-x,-t)$}
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap^{*}+bq(-x,-t) \\
+        r_2 = b^{*}p^{*} + dq(-x,-t) 
+    \end{cases}
+\end{equation*}
+若 (12), (13) 等价, 需 $ \Delta^{*}(-x,-t) = \Delta $
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app^{*} + bpp(-x,-t) + b^{*}p^{*}p^{*}(-x,-t) + dp(-x,-t)p^{*}(-x,-t) \\
+        \Delta^{*}(-x,-t) &= ap^{*}(-x,-t)p(-x,-t) + b^{*}p^{*}(-x,-t)p^{*} + bp(-x,-t)p + dp^{*}p 
+    \end{aligned}
+\end{equation*} 
+则只需 $ a = d $, 此时有 $ (13) = (12)^{*}(-x,-t) $. 方程约化为
+\begin{equation*}
+    ip_{t} + p_{xx} + 2p\big(app^{*} + bpp^{*}(-x,-t) + b^{*}pp^{*}(-x,-t) + ap(-x,-t)p^{*}(-x,-t)\big) = 0
+\end{equation*}
+
+\subsection{$ p_1 = p^{*}(-x), q_1 = q^{*}(-x) $}
+\begin{equation}
+    \begin{cases}
+        r_1 = ap^{*}(-x) + bq^{*}(-x) \\
+        r_2 = cp^{*}(-x) + dq^{*}(-x)
+    \end{cases}
+\end{equation}
+要让 (\ref{2024.09.28(*)}) 中 (12)(13) 等价, 只需 $ \Delta^{*}(-x) = \Delta $, 
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= ap^{*}(-x)p + bq^{*}(-x)p + c^{*}p^{*}(-x)q + dq^{*}(-x)q \\
+        \Delta^{*}(-x) &= a^{*}pp^{*}(-x) + b^{*}qp^{*}(-x) + c^{*}pq^{*}(-x) + d^{*}qq^{*}(-x) 
+    \end{aligned}
+\end{equation*}
+只需 $ a,d \in \mathbb{R}, b = c^{*} \in \mathbb{C} $, 此时有
+\begin{equation*}
+    \begin{aligned}
+        (21) = a(12)^{*}(-x) + b(13)^{*}(-x) \\
+        (31) = b^{*}(12)(-x) + d(12)^{*}(-x)
+    \end{aligned}
+\end{equation*}
+方程约化为
+\begin{equation*}
+    \begin{aligned}
+        ip_{t} + p_{xx} + 2p \big(app^{*}(-x) + bpq^{*}(-x) + b^{*}p^{*}(-x)q + dq^{*}(-x)q \big) = 0\\
+        iq_{t} + q_{xx} + 2q \big(app^{*}(-x) + bpq^{*}(-x) + b^{*}p^{*}(-x)q + dq^{*}(-x)q \big) = 0
+    \end{aligned}
+\end{equation*}
+则 q 可取 $ p^{*}(-t), p(-x), p^{*}(-x,-t) $. 
+
+\subsubsection{$q = p^{*}(-t)$}
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap^{*}(-x) + bp(-x,t) \\
+        r_2 = b^{*}p^{*}(-x) + dp(-x,-t) 
+    \end{cases}
+\end{equation*}
+想要 (12) (13) 等价, 需 $ \Delta^{*}(-t) = \Delta $,
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app^{*}(-x) + bpp(-x,-t) + b^{*}p^{*}(-x)p^{*}(-t) + dp(-x,-t)p^{*}(-t) \\
+        \Delta^{*}(-t) &= ap^{*}(-t)p + bp^{*}(-t)p(-x) + bp(-x,-t)p + dp^{*}(-x)p   
+    \end{aligned}
+\end{equation*}
+故只需 $ a = d $. 方程约化为
+\begin{equation*}
+    ip_t + p_{xx} + 2p \big( app^{*}(-x) + bpp(-x,-t) + b^{*}p^{*}(-x)p^{*}(-t) + ap(-x,-t)p^{*}(-t) \big) = 0
+\end{equation*}
+
+\subsubsection{$ q = p(-x) $}
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap^{*}(-x) + bp^{*} \\
+        r_2 = b^{*}p^{*}(-x) + dp^{*} 
+    \end{cases}
+\end{equation*}
+想要 (12) (13) 等价, 需 $ \Delta(-x) = \Delta $,
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app^{*}(-x) + bpp^{*} + b^{*}p^{*}(-x)p{-x} + dp^{*}p(-x) \\
+        \Delta(-x) &= ap(-x)p^{*} + bp(-x)p^{*}(-x) + b^{*}pp + dp^{*}(-x)p   
+    \end{aligned}
+\end{equation*}
+故只需 $ a = d, b\in \mathbb{R}$, 此时 $ (13) = (12)(-x) $. 方程约化为
+\begin{equation*}
+    ip_t + p_{xx} + 2p \big( app^{*}(-x) + bpp^{*} + bp^{*}(-x)p(-x) + ap^{*}p(-x) \big) = 0
+\end{equation*}
+
+\subsubsection{$ q = p^{*}(-x,-t) $}
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap^{*}(-x) + bp(-t) \\
+        r_2 = b^{*}p^{*}(-t) + dp(-t) 
+    \end{cases}
+\end{equation*}
+想要 (12) (13) 等价, 需 $ \Delta(-x,-t) = \Delta $,
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app^{*}(-x) + bpp(-t) + b^{*}p^{*}(-x)p^{*}(-x,-t) + dp(-t)p^{*}(-x,-t) \\
+        \Delta^{*}(-x,-t) &= a^{*}p^{*}(-x,-t)p(-t) + b^{*}p^{*}(-x,-t)p(-x) + bp(-t)p + dp^{*}(-x)p   
+    \end{aligned}
+\end{equation*}
+故$ \Delta(-x,-t) = \Delta $ 只需 $ a = d $. 方程约化为
+\begin{equation*}
+    ip_t + p_{xx} + 2p \big( app^{*}(-x) + bpp(-t) + b^{*}p^{*}(-x)p^{*}(-x,-t) + ap(-t)p^{*}(-x,-t) \big) = 0
+\end{equation*}
+
+\subsection{$ p_1 = p(-t), q_1 = q(-t) $}
+\begin{equation}
+    \begin{cases}
+        r_1 = ap(-t) + bq(-t) \\
+        r_2 = cp(-t) + dq(-t)
+    \end{cases}
+\end{equation}
+要约化 (12) (13), 需要 $ \Delta(-t) = \Delta $, 其中 
+\begin{equation}
+    \begin{aligned}
+        \Delta &= app(-t) + bpq(-t) + cp(-t)q + dqq(-t) \\
+        \Delta(-t) &= ap(-t)p + bp(-t)q + cpq(-t) + dq(-t)q
+    \end{aligned}
+\end{equation} 
+则 $ \Delta(-t) = \Delta $, 只需 $ b=c $, 此时有
+\begin{equation*}
+    \begin{aligned}
+        (21) &= a(12)(-t) + b(13)(-t) \\
+        (31) &= b(12)(-t) + d(13)(-t)
+    \end{aligned}
+\end{equation*}
+方程约化为
+\begin{equation*}
+    \begin{aligned}
+        ip_{t} + p_{xx} + 2p \big( app(-t) + bpq(-t) + bp(-t)q + dqq(-t) \big) = 0\\
+        iq_{t} + q_{xx} + 2q \big( app(-t) + bpq(-t) + bp(-t)q + dqq(-t) \big) = 0
+    \end{aligned}
+\end{equation*}
+q 取值同上
+
+\subsubsection{ $ q = p^{*}(-t) $}
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap(-t) + bp^{*} \\
+        r_2 = bp(-t) + dp^{*} 
+    \end{cases}
+\end{equation*}
+想要 (12) (13) 等价, 需 $ \Delta^{*}(-t) = \Delta $,
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app(-t) + bpp^{*} + bp(-t)p^{*}(-t) + dp^{*}p^{*}(-t) \\
+        \Delta^{*}(-t) &= a^{*}p^{*}(-t)p^{*} + b^{*}p^{*}(-t)p(-t) + b^{*}p^{*}p + d^{*}p(-t)p   
+    \end{aligned}
+\end{equation*}
+故$ \Delta^{*}(-t) = \Delta $ 只需 $ a^{*} = d, b \in mathbb{R} $. 方程约化为
+\begin{equation*}
+    ip_t + p_{xx} + 2p \big( app(-t) + bpp^{*} + bp(-t)p^{*}(-t) + a^{*}p^{*}p^{*}(-t) \big) = 0
+\end{equation*}
+
+\subsubsection{ $ q = p(-x) $}
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap(-t) + bp(-x,-t) \\
+        r_2 = bp(-t) + dp(-x,-t)
+    \end{cases}
+\end{equation*}
+想要 (12) (13) 等价, 需 $ \Delta(-x) = \Delta $,
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app(-t) + bpp(-x,-t) + bp(-t)p(-x) + dp(-x,-t)p(-x) \\
+        \Delta(-x) &= ap(-x)p(-x,-t) + bp(-x)p(-x,-t) + bp(-x,-t)p + dp(-t)p   
+    \end{aligned}
+\end{equation*}
+故$ \Delta^{*}(-t) = \Delta $ 只需 $ a = d $. 方程约化为
+\begin{equation*}
+    ip_t + p_{xx} + 2p \big( app(-t) + bpp(-x,-t) + bp(-t)p(-x) + ap(-x)p(-x,-t) \big) = 0
+\end{equation*}
+
+\subsubsection{ $ q = p^{*}(-x,-t) $}
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap(-t) + bp^{*}(-x) \\
+        r_2 = bp(-t) + dp^{*}(-x)
+    \end{cases}
+\end{equation*}
+想要 (12) (13) 等价, 需 $ \Delta^{*}(-x,-t) = \Delta $,
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app(-t) + b^{*}pp^{*}(-x) + b^{*}p(-t)p^{*}(-x,-t) + dp^{*}(-x)p^{*}(-x,-t) \\
+        \Delta^{*}(-x,-t) &= a^{*}p^{*}(-x,-t)p(-x) + bp^{*}(-x,-t)p(-t) + bp^{*}(-x)p + d^{*}p(-t)p   
+    \end{aligned}
+\end{equation*}
+故$ \Delta^{*}(-x,-t) = \Delta $ 只需 $ a^{*} = d , b \in \mathbb{R}$. 方程约化为
+\begin{equation*}
+    ip_t + p_{xx} + 2p \big( app(-t) + bpp^{*}(-x) + bp(-t)p^{*}(-x,-t) + a^{*}p^{*}(-x)p^{*}(-x,-t) \big) = 0
+\end{equation*}
+
+\subsection{$ p_{1} = p(-x), q_{1} = q(-x,-t) $}
+有
+\begin{equation}
+    \begin{cases}
+        r_1 = ap(-x,-t) + bq(-x,-t) \\
+        r_2 = cp(-x,-t) + dq(-x,-t)
+    \end{cases}
+\end{equation}
+要约化 (12) (21), 需要 $ \Delta(-x,-t) = \Delta $, 其中 
+\begin{equation}
+    \begin{aligned}
+        \Delta &= app(-x,-t) + bpq(-x,-t) + cp(-x,-t)q + dq(-x,-t)q \\
+        \Delta(-x,-t) &= ap(-x,-t)p + bp(-x,-t)q + cpq(-x,-t) + dqq(-x,-t)
+    \end{aligned}
+\end{equation} 
+则 $ \Delta(-x,-t) = \Delta $, 只需 $ b=c $, 此时有
+\begin{equation*}
+    \begin{aligned}
+        (21) &= a(12)(-x,-t) + b(13)(-x,-t) \\
+        (31) &= b(12)(-x,-t) + d(13)(-x,-t)
+    \end{aligned}
+\end{equation*}
+方程约化为
+\begin{equation*}
+    \begin{aligned}
+        ip_{t} + p_{xx} + 2p \big( app(-x,-t) + bpq(-x,-t) + bp(-x,-t)q + dqq(-x,-t) \big) = 0\\
+        iq_{t} + q_{xx} + 2q \big( app(-x,-t) + bpq(-x,-t) + bp(-x,-t)q + dqq(-x,-t) \big) = 0
+    \end{aligned}
+\end{equation*}
+
+\subsubsection{ $ p_{1} = p(-x,-t), q = q^{*}(-t), q_{1} = q(-x,-t) = p^{*}(-x) $}
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap(-x,-t) + bp^{*}(-x) \\
+        r_2 = bp(-x,-t) + dp^{*}(-x)
+    \end{cases}
+\end{equation*}
+想要 (12) (13) 等价, 需 $ \Delta(-t) = \Delta $,
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app(-x,-t) + bpp^{*}(-x) + bp^{*}(-t)p(-x,-t) + dp^{*}(-x)p^{*}(-t) \\
+        \Delta^{*}(-t) &= a^{*}p^{*}p^{*}(-x) + b^{*}p^{*}(-t)p(-x,-t) + b^{*}pp^{*}(-x,-t) + d^{*}pp(-x.-t)   
+    \end{aligned}
+\end{equation*}
+故$ \Delta^{*}(-t) = \Delta $ 只需 $ a^{*} = d , b \in \mathbb{R}$, 此时有 $ (13) = (12)^{*}(-t) $. 方程约化为
+\begin{equation*}
+    ip_t + p_{xx} + 2p \big( app(-x,-t) + bpp(-t) + bp(-x,-t)p(-x) + ap(-t)p(-x) \big) = 0
+\end{equation*}
+
+\subsubsection{ $ p_{1} = p(-x,-t), q = p(-x), q_{1} = q(-x,-t) = p(-t) $}
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap(-x,-t) + bp(-t) \\
+        r_2 = bp(-x,-t) + dp(-t)
+    \end{cases}
+\end{equation*}
+想要 (12) (13) 等价, 需 $ \Delta(-x) = \Delta $,
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app(-x,-t) + bpp(-t) + bp(-x)p(-x,-t) + dp(-x)p(-t) \\
+        \Delta(-x) &= ap(-x)p(-t) + bp(-x)p(-x,-t) + bpp(-t) + dpp(-x.-t)   
+    \end{aligned}
+\end{equation*}
+故$ \Delta(-x) = \Delta $ 只需 $ a = d $, 此时有 $ (13) = (12)(-x) $. 方程约化为
+\begin{equation*}
+    ip_t + p_{xx} + 2p \big( app(-x,-t) + bpp(-t) + bp(-x,-t)p(-x) + ap(-t)p(-x) \big) = 0
+\end{equation*}
+
+\subsubsection{ $ p_{1} = p(-x,-t), q = p^{*}(-x,-t), q_{1} = q(-x,-t) = p^{*} $}
+\begin{equation*}
+    \begin{cases}
+        r_1 = ap(-x,-t) + bp^{*} \\
+        r_2 = bp(-x,-t) + dp^{*}
+    \end{cases}
+\end{equation*}
+想要 (12) (13) 等价, 需 $ \Delta^{*}(-x,-t) = \Delta $,
+\begin{equation*}
+    \begin{aligned}
+        \Delta &= app(-x,-t) + bpp^{*} + bp^{*}(-x,-t)p(-x,-t) + dp^{*}p(-x,-t) \\
+        \Delta^{*}(-x,-t) &= a^{*}p^{*}(-x,-t)p^{*} + b^{*}p^{*}(-x,-t)p(-x,-t) + b^{*}pp^{*} + d^{*}p(-x.-t)p   
+    \end{aligned}
+\end{equation*}
+故$ \Delta^{*}(-x,-t) = \Delta $ 只需 $ a = d^{*} b \in \mathbb{R} $, 此时有 $ (13) = (12)^{*}(-x,-t) $. 方程约化为
+\begin{equation*}
+    ip_t + p_{xx} + 2p \big( app(-x,-t) + bpp^{*} + bp(-x,-t)p^{*}(-x,-t) + a^{*}p^{*}p^{*}(-x,-t) \big) = 0
+\end{equation*}
+
+%\section{2024.10.19}
+由上节, 我们得到 
+\begin{equation*}
+a_{32} = -\frac{b^{*}}{a}a_{22} = -\frac{b^{*}}{a}a_{33}, \quad a_{23} = -\frac{b}{a}a_{22} = - \frac{b}{a}a_{33}, \quad a_{11} = aa_{22} + b^{*}a_{23}
+\end{equation*} 
+若取 $ a_{22} = a_{33} = m $, 则 
+\begin{equation*}
+    A = \begin{pmatrix}
+        (a - \frac{|b|^{2}}{a})m & 0 & \\
+        0 & m & -\frac{b}{a}m \\
+        0 & -\frac{b^{*}}{a}m & m
+    \end{pmatrix}
+\end{equation*} 
+欲求 $ B\Phi^{*}_{1}, B\Phi^{*}_{1}(-t) $ 谁是伴随问题, 已知 
+\begin{equation*}
+\begin{cases}
+    \Phi_{1} \qquad \text{对应于 $\lambda_{1} $, 其中 $ \Phi_{1} $ 为列向量} \\
+    \Phi^{\dagger}_{1}A \qquad \text{对应于 $\lambda^{*}_{1} $, 其中 $ \Phi^{*}_{1}A $ 为行向量}
+\end{cases}
+\end{equation*}
+由上可得 $ B\Phi^{*}_{1}(-t) $ 为伴随问题的解(下面第一个括号为原谱问题的解, 第二个为伴随谱问题的解)
+\begin{equation*}
+    \begin{cases}
+        \Phi_{1} \qquad \lambda_{1} \\
+        \Phi^{\dagger}_{1}A \qquad \lambda^{*}_{1}
+    \end{cases}
+    \implies \begin{cases}
+        B\Phi^{*}_{1}(-t) \qquad -\lambda^{*}_{1} \\
+        \Phi^{T}_{1}(-t)BA \qquad \lambda_{1}
+    \end{cases}
+\end{equation*}
+易得, $ \Phi^{T}_{1}(-t)BA $ 是伴随问题在 $ \lambda = -\lambda_{1} $ 的解. 
+
+\section{Darboux 变换}
+由 AKNS, 若 $ \Phi_{1} $ 是原谱问题在 $ \lambda = \lambda_{1} $ 的解, $ \Psi $ 是伴随问题在 $ \lambda = \mu_{1} $ 的解, 则 DT 可写为 
+\begin{equation*}
+    T_{1} = I + \frac{\mu_{1} - \lambda_{1}}{\lambda - \mu_{1}} \frac{\Phi_{1}\Psi_{1}}{\Psi_{1}\Phi_{1}}, \quad
+    T^{-1}_{1} = I - \frac{\mu_{1} - \lambda_{1}}{\lambda - \lambda_{1}} \frac{\Phi_{1}\Psi_{1}}{\Psi_{1}\Phi_{1}}
+\end{equation*}
+思路: \begin{enumerate}
+    \item $ \Phi_{1} $ 是原谱问题的特解, $ T_{1} $ 是其 DT, 则 $ T^{-1}_{1} $ 是伴随问题的 DT
+    \item $ \hat{\Psi}_{1} = \Psi_{1}T^{-1}_{1} $ 的伴随问题的特解, $ T_{2} $ 是其 DT, 则 $ T^{-1}_{2} $ 是原谱问题的 DT.
+\end{enumerate}
+即在 Twofold DT 中, 记 $ T = T^{-1}_{2}T_{1} $, s.t. $ \Phi_{1} \xrightarrow{T_1} \widetilde{\Phi}_{1} \xrightarrow{T^{-1}_{2}} \widehat{\Phi}_{1} $
+\begin{proof}
+    先考虑原谱问题的 DT, 设 $ T_{1} = \lambda T_{1} + T_{0} $, 其中 $ T_{11} = (g_{ij})_{3 \times 3}, T_{10} = (h_{ij})_{3 \times 3} $. 由 $ \hat{Phi}_{1x} = \hat{U}_{1}\hat{Phi}_{1}, \hat{Phi}_{1} = T \Phi $ 可得
+    \begin{equation}
+        T_{1x}\Phi_{1} + T_{1} U_{1} \Phi_{1} = \hat{U}_{1} T_{1} \Phi_{1}, \implies T_{1x} + T_{1}U = \hat{U}_{1}T 
+    \end{equation}
+\end{proof}
+代入 $ T_{1}, U $ 有
+\begin{equation}
+    \lambda T_{11x} + T_{10x} + \i \lambda^{2} T_{11}\sigma_{3} + \i \lambda T_{10}\sigma_{3} + \lambda T_{11}P + T_{10}P = \i \lambda^{2} \sigma_{3}T_{11} + \i \lambda \sigma_{3}T_{10} + \lambda \hat{P}T_{11} + \hat{P}T_{10}
+\end{equation}
+比较 $\lambda $ 的同次幂可得 
+\begin{equation}
+    \begin{aligned}
+        \lambda^{2}:& \i T_{11}\sigma_{3} = \i \sigma_{3}T_{11} \\
+        \lambda^{1}:& T_{11x} + \i T_{10} \sigma_{3} + T_{11}P = \i \sigma_{3} T_{10} + \hat{P}T_{11} \\
+        \lambda^{0}:& T_{10x} + T_{10}P = \hat{P}T_{10}
+    \end{aligned} 
+\end{equation}
+故有
+\begin{equation}
+    \begin{aligned}
+        \lambda^{2}:& g_{12} = g_{21} = g_{13} = g_{31} = 0 \\
+        \lambda^{1}:& g_{11x} = g_{22x} = g_{23x} = g_{33x} = 0
+    \end{aligned}
+    \implies
+    \begin{aligned}
+        - \i h_{12} + g_{11}p &= \i h_{12} + g_{22}\hat{p} + g_{33}\hat{q} \\
+        - \i h_{13} + g_{11}q &= \i h_{13} + g_{23}\hat{p} + g_{33}\hat{q} \\
+        - \i h_{21} + g_{11}r_{1} - g_{23}r_{2} &= \i h_{21} + g_{11}\hat{r}_{1} \\
+        - \i h_{31} + g_{32}r_{1} - g_{33}r_{2} &= \i h_{31} + g_{11}\hat{r}_{2} \\
+    \end{aligned}
+\end{equation}
+由 $ \lambda^{0} $ 可得: 
+\begin{equation}
+    \begin{aligned}
+        h_{11x} - r_{1}h_{12} - r_{2}h_{13} = h_{21}\hat{p} + h_{31}\hat{q} \\
+        h_{12x} - h_{12}p  = h_{22}\hat{p} + h_{32}\hat{q} \\
+        h_{13x} - h_{11}q  = h_{23}\hat{p} + h_{33}\hat{q} \\
+        h_{21x} - r_{1}h_{22} - r_{2}h_{23} = -\hat{r}_{1}h_{11} \\
+        \left.
+            \begin{aligned}
+            h_{22x} + h_{21}p = -\hat{r}_{1} h_{12} \\
+            h_{23x} + h_{21}q = -\hat{r}_{1} h_{13} \\
+            h_{31x} + r_{1}h_{32} - r_{2}h_{33} = -\hat{r}_{2} h_{11} \\
+            h_{32x} + h_{31}p = -p_{2} h_{12} \\
+            h_{33x} + h_{31}q = -\hat{r}_{2} h_{13} \\
+        \end{aligned}
+        \right\} (*)
+    \end{aligned}
+\end{equation}
+故可取 $ g_{11} = 1, g_{22} = g_{23} = g_{32} = g_{33} = 0 $, 则有
+\begin{equation}
+  h_{12} = \frac{p}{2\i}, h_{21} = \frac{\hat{r}_{1}}{-2\i}, h_{13} = \frac{q}{2\i}, h_{31} = \frac{\hat{r}_{2}}{-2\i}
+\end{equation} 
+带入 (*) 可得 $ h_{22x} = h_{23x} = h_{32x} = h_{33x} = 0 $, 则 
+\begin{equation}
+    T_{1} = \begin{pmatrix}
+        \lambda + h_{11} & \frac{p}{2\i} & \frac{q}{2\i} \\
+        h_{21} & 1 & 0 \\
+        h_{31} & 0 & 1
+    \end{pmatrix}
+\end{equation}
+由 $ T_{1}\Phi_{1}|_{lambda = \lambda_{1}} = 0 $, 不妨设 $ \Phi_{1} = (\phi_{1}, \phi_{2},\phi_{3})^{T} $, 解得 
+\begin{equation}
+    h_{21} = - \frac{\phi_{2}}{\phi_{1}}, h_{31} = - \frac{\phi_{3}}{\phi_{1}}, h_{11} = -\lambda_{1} -  \frac{p\phi_{1} + q \phi_{3}}{2\i \phi_{1}}, 
+\end{equation}
+故 
+\begin{equation*}
+    T_{1} = \begin{pmatrix}
+        \lambda -\lambda_{1} - \frac{p\phi_{1} + q \phi_{3}}{2\i \phi_{1}} & \frac{p}{2\i} & \frac{q}{2\i} \\
+        - \frac{\phi_{2}}{\phi_{1}} & 1 & 0 \\
+        - \frac{\phi_{3}}{\phi_{1}} & 0 & 1
+    \end{pmatrix}, \quad 
+    T_{1}^{-1} = \frac{1}{\lambda - \lambda_{1}}\begin{pmatrix}
+        1 & 0 & -\frac{q}{2\i} \\
+        \frac{\phi_{2}}{\phi_{1}} & \lambda - \lambda_{1} - \frac{p\phi_{2}}{2\i \phi_{1}} & -\frac{q\phi_{2}}{2\i} \\
+        \frac{\phi_{3}}{\phi_{1}} & -\frac{p\phi_{3}}{2\i \phi_{1}} & \lambda - \lambda_{1} - \frac{p\phi_{3}}{2\i \phi_{1}}
+    \end{pmatrix}
+\end{equation*}
+同理可得 
+\begin{equation*}
+    \begin{aligned}
+        T_{1} &= \begin{pmatrix}
+            \lambda -\mu_{1} + \frac{\mu_{1}-\lambda_{1}}{\Delta}(x_{2}\phi_{2} + x_{3}\phi_{3}) & \frac{p}{2\i} - \frac{\mu_{1}-\lambda_{1}}{\Delta}\phi_{1}x_{2} & \frac{q}{2\i} - \frac{mu_{1}-\lambda_{1}}{\Delta}\phi_{1}x_{3} \\
+            - \frac{\phi_{2}}{\phi_{1}} & 1 & 0 \\
+            - \frac{\phi_{3}}{\phi_{1}} & 0 & 1
+        \end{pmatrix} \\
+        T_{1}^{-1} &= \frac{1}{\lambda - \lambda_{1}}\begin{pmatrix}
+            1 & -\frac{p}{2\i} - \frac{\mu_{1}-\lambda_{1}}{\Delta}\phi_{1}x_{2} & -\frac{q}{2\i} - \frac{\mu_{1}-\lambda_{1}}{\Delta}\phi_{1}x_{2} \\
+            \frac{\phi_{2}}{\phi_{1}} & 1 & 0 \\
+            \frac{\phi_{3}}{\phi_{1}} & 0 & 1
+        \end{pmatrix}
+    \end{aligned}
+\end{equation*}
+其中 $ \Delta = \phi_{1}x_{1} + \phi_{2}x_{2} + \phi_{3}x_{3} $. 故 
+\begin{equation*}
+    \begin{aligned}
+        T &= T_{2}^{-1}T_{1} = \frac{1}{\lambda - \mu_{1}}
+        \begin{pmatrix}
+            \lambda - \mu_{1} + \frac{\mu_{1}- \lambda_{1}}{\Delta}\phi_{1}x_{1} & \frac{\mu_{1}- \lambda_{1}}{\Delta}\phi_{1}x_{2} & \frac{\mu_{1}- \lambda_{1}}{\Delta}\phi_{1}x_{3} \\
+            \frac{\mu_{1}- \lambda_{1}}{\Delta}\phi_{2}x_{1} & \lambda - \mu_{1} - \frac{\mu_{1}- \lambda_{1}}{\Delta}\phi_{2}x_{2} & \frac{\mu_{1}- \lambda_{1}}{\Delta}\phi_{2}x_{3} \\
+            \frac{\mu_{1}- \lambda_{1}}{\Delta}\phi_{3}x_{1} & \frac{\mu_{1}- \lambda_{1}}{\Delta}\phi_{3}x_{2} & \lambda - \mu_{1} + \frac{\mu_{1}- \lambda_{1}}{\Delta}\phi_{3}x_{3}
+        \end{pmatrix} \\
+        &= I + \frac{\mu_{1} - \lambda_{1}}{\lambda - \mu_{1}} \frac{\Phi_{1}\Psi_{1}}{\Delta} = I + \frac{\mu_{1} - \lambda_{1}}{\lambda - \mu_{1}} \frac{\Phi_{1}\Psi_{1}}{\Psi_{1}\Phi_{1}}
+    \end{aligned}
+\end{equation*}
