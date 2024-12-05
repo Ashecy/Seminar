@@ -46,4 +46,4 @@ The copyright of part Lectures and Codes belongs to me, and is published under t
 
 私はとてもかわいい！スターをください⭐！
 
-[![Star History Chart](https://api.star-history.com/svg?repos=IceySwan/JW-seminar&type=Date)](https://star-history.com/#IceySwan/JW-seminar&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Ashecy/Seminar&type=Date)](https://star-history.com/#Ashecy/Seminar&Date)
